@@ -1,6 +1,6 @@
-# JCAT Tracker
+# DPET Tracker
 
-The main codes of the JCAT tracker will be available as soon as possible.
+The main codes of the DPET tracker will be available as soon as possible.
 
 ## Running Environments
 * Pytorch 1.1.0, Python 3.6.12, Cuda 10.0, torchvision 0.3.0, cudatoolkit 10.0, Matlab R2016b.
@@ -11,7 +11,7 @@ The instructions have been tested on an Ubuntu 16.04 system. In case of issues, 
 
 #### Clone the GIT repository
 ```
-git clone https://github.com/Yang428/JCAT.git.
+git clone https://github.com/Yang428/DPET.git.
 ```
 
 #### Install dependent libraries
@@ -21,11 +21,13 @@ bash install.sh conda_install_path pytracking
 ```
 
 #### Download the pre-trained networks
-You can download the models from the [Baidu cloud link](https://pan.baidu.com/s/1aayqXtFBeqggeZKS2dMnxA), the extraction code is ' '. Then put the model files 'JcatNet.pth.tar' to the subfolder 'pytracking/networks'.
+You can download the models from the [Baidu cloud link](https://pan.baidu.com/s/1gDHbLW3DeiVkx7iHtitnAw?pwd=5sfo), the extraction code is '5sfo'. Then put the model files 'DPETNet.pth.tar' to the subfolder 'pytracking/networks'.
 
 ## Testing the tracker
-There are the [raw resullts](https://github.com/Yang428/JCAT/tree/master/resultsOnBenchmarks) on six datasets. 
-1) Download the testing datasets Got-10k, TrackingNet, VOT2016, VOT2018, VOT2019 and VOT2020 from the following Baidu cloud links.
+There are the [raw resullts](https://github.com/Yang428/JCAT/tree/master/resultsOnBenchmarks) on eight datasets. 
+1) Download the testing datasets OTB-100, LaSOT, Got-10k, TrackingNet, VOT2016, VOT2018, VOT2019 and VOT2020 from the following Baidu cloud links.
+* [OTB-100](https://pan.baidu.com/s/1TC6BF9erhDCENGYElfS3sw), the extraction code is '9x8q'.
+* [LaSOT](https://pan.baidu.com/s/1KBlrWGOFH9Fe85pCWN5ZkA&shfl=sharepset#list/path=%2F).
 * [Got-10k](https://pan.baidu.com/s/1t_PvpIicHc0U9yR4upf-cA), the extraction code is '78hq'.
 * [TrackingNet](https://pan.baidu.com/s/1BKtc4ndh_QrMiXF4fBB2sQ), the extraction code is '5pj8'.
 * [VOT2016](https://pan.baidu.com/s/1iU88Aqq9mvv9V4ZwY4gUuw), the extraction code is '8f6w'.
@@ -36,43 +38,47 @@ There are the [raw resullts](https://github.com/Yang428/JCAT/tree/master/results
 
 2) Change the following paths to you own paths.
 ```
-Network path: pytracking/parameters/Jcat/Jcat.py  params.segm_net_path.
+Network path: pytracking/parameters/dpet/dpet.py  params.segm_net_path.
 Results path: pytracking/evaluation/local.py  settings.network_path, settings.results_path, dataset_path.
 ```
-3) Run the JCAT tracker on Got10k and TrackingNet datasets.
+3) Run the DPET tracker on OTB-100, LaSOT, Got10k and TrackingNet datasets.
 ```
 cd pytracking
+python run_experiment.py myexperiments otb
+python run_experiment.py myexperiments lasot
 python run_experiment.py myexperiments got10k
 python run_experiment.py myexperiments trackingnet
 ```
 
 ## Evaluation on VOT16, VOT18 and VOT19 using Matlab R2016b
-We provide a [VOT Matlab toolkit](https://github.com/votchallenge/toolkit-legacy) integration for the JCAT tracker. There is the [tracker_JCAT.m](https://github.com/Yang428/JCAT/tree/master/pytracking/utils) Matlab file in the 'pytracking/utils', which can be connected with the toolkit. It uses the 'pytracking/vot_wrapper.py' script to integrate the tracker to the toolkit.
+We provide a [VOT Matlab toolkit](https://github.com/votchallenge/toolkit-legacy) integration for the DPET tracker. There is the [tracker_DPET.m](https://github.com/Yang428/DPET/tree/master/pytracking/utils) Matlab file in the 'pytracking/utils', which can be connected with the toolkit. It uses the 'pytracking/vot_wrapper.py' script to integrate the tracker to the toolkit.
 
 ## Evaluation on VOT2020 using Python Toolkit
-We provide a [VOT Python toolkit](https://github.com/votchallenge/toolkit) integration for the JCAT tracker. There is the [trackers.ini](https://github.com/Yang428/JCAT/tree/master/pytracking/utils) setting file in the 'pytracking/utils', which can be connected with the toolkit. It uses the 'pytracking/vot20_wrapper.py' script to integrate the tracker to the toolkit.
+We provide a [VOT Python toolkit](https://github.com/votchallenge/toolkit) integration for the DPET tracker. There is the [trackers.ini](https://github.com/Yang428/DPET/tree/master/pytracking/utils) setting file in the 'pytracking/utils', which can be connected with the toolkit. It uses the 'pytracking/vot20_wrapper.py' script to integrate the tracker to the toolkit.
 ```
 cd pytracking/workspace_vot2020
 pip install git+https://github.com/votchallenge/vot-toolkit-python
 vot initialize <vot2020> --workspace ./workspace_vot2020/
-vot evaluate JCAT
-vot analysis --workspace ./workspace_vot2020/JCAT
+vot evaluate DPET
+vot analysis --workspace ./workspace_vot2020/DPET
 ```
 
 ## Training the networks
-The JCAT network is trained only on the YouTube VOS dataset. Download the VOS training dataset (2018 version) and copy the files vos-list-train.txt and vos-list-val.txt from ltr/data_specs to the training directory of the VOS dataset.
-1) Download the training dataset from [this link](https://youtube-vos.org/challenge/2018/).
+The DPET network is trained on the YouTube VOS, GOT-10K and TrackingNet datasets. Download the VOS training dataset (2018 version) and copy the files vos-list-train.txt and vos-list-val.txt from ltr/data_specs to the training directory of the VOS dataset.
+1) Download the YouTube VOS dataset from [this link](https://youtube-vos.org/challenge/2018/).
+2) Download the GOT-10K dataset from [this link](https://blog.csdn.net/laizi_laizi/article/details/105447947#VisDrone_77).
+3) Download the TrackingNet dataset from [this link](https://blog.csdn.net/laizi_laizi/article/details/105447947#VisDrone_77).
 
-2) Change the following paths to you own paths.
+4) Change the following paths to you own paths.
 ```
 Workspace: ltr/admin/local.py  workspace_dir.
 Dataset: ltr/admin/local.py  vos_dir.
 ```
-3) Taining the JCAT network
+3) Taining the DPET network
 ```
 cd ltr
-python run_training.py Jcat Jcat_default
+python run_training.py dpet dpet_default
 ```
 
 ## Acknowledgement
-This a modified version of [LEAST](https://github.com/Yang428/LEAST) tracker which is based on the [pytracking](https://github.com/visionml/pytracking) framework. We would like to thank the author Martin Danelljan of [pytracking](https://github.com/visionml/pytracking) and the author Alan Lukežič of [D3S](https://github.com/alanlukezic/d3s).
+We would like to thank the author Martin Danelljan of [pytracking](https://github.com/visionml/pytracking) and the author Alan Lukežič of [D3S](https://github.com/alanlukezic/d3s).
