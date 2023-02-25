@@ -83,8 +83,9 @@ The DPET network is trained on the YouTube VOS, GOT-10K and TrackingNet datasets
 1) Download the YouTube VOS dataset from [this link](https://youtube-vos.org/challenge/2018/).
 2) Download the GOT-10K dataset from [this link](https://blog.csdn.net/laizi_laizi/article/details/105447947#VisDrone_77).
 3) Download the TrackingNet dataset from [this link](https://blog.csdn.net/laizi_laizi/article/details/105447947#VisDrone_77).
+4) Download the pre-generated masks of GOT-10K and TrackingNet from [this link](https://drive.google.com/file/d/17YcdQOoA4DubK-krClJfxNtw9ooCyWHv/view)
 
-4) Change the following paths to you own paths.
+5) Change the following paths to you own paths.
 ```
 Workspace: ltr/admin/local.py  workspace_dir.
 Dataset: ltr/admin/local.py  vos_dir.
