@@ -3,7 +3,7 @@
 The main codes of the DPET tracker will be available as soon as possible.
 
 ## Running Environments
-* Pytorch 1.1.0, Python 3.6.12, Cuda 10.0, torchvision 0.3.0, cudatoolkit 10.0, Matlab R2016b.
+* Pytorch 1.1.0, Python 3.6.12, Cuda 9.0, torchvision 0.3.0, cudatoolkit 9.0, Matlab R2016b.
 * Ubuntu 16.04, NVIDIA GeForce GTX 1080Ti.
 
 ## Installation
@@ -20,11 +20,26 @@ Run the installation script 'install.sh' to install all dependencies. We refer t
 bash install.sh conda_install_path pytracking
 ```
 
+#### Or step by step install
+```
+conda create -n pytracking python=3.6
+conda activate pytracking
+conda install -y pytorch=1.1.0 torchvision=0.3.0 cudatoolkit=9.0 -c pytorch
+conda install -y matplotlib=2.2.2
+conda install -y pandas
+pip install opencv-python
+pip install tensorboardX
+conda install -y cython
+pip install pycocotools
+pip install jpeg4py 
+sudo apt-get install libturbojpeg
+```
+
 #### Download the pre-trained networks
 You can download the models from the [Baidu cloud link](https://pan.baidu.com/s/1gDHbLW3DeiVkx7iHtitnAw?pwd=5sfo), the extraction code is '5sfo'. Then put the model files 'DPETNet.pth.tar' to the subfolder 'pytracking/networks'.
 
 ## Testing the tracker
-There are the [raw resullts](https://github.com/Yang428/JCAT/tree/master/resultsOnBenchmarks) on eight datasets. 
+There are the [raw resullts](https://github.com/Yang428/DPET/tree/master/resultsOnBenchmarks) on eight datasets. 
 1) Download the testing datasets OTB-100, LaSOT, Got-10k, TrackingNet, VOT2016, VOT2018, VOT2019 and VOT2020 from the following Baidu cloud links.
 * [OTB-100](https://pan.baidu.com/s/1TC6BF9erhDCENGYElfS3sw), the extraction code is '9x8q'.
 * [LaSOT](https://pan.baidu.com/s/1KBlrWGOFH9Fe85pCWN5ZkA&shfl=sharepset#list/path=%2F).
