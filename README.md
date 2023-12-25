@@ -3,6 +3,9 @@
 The main codes of the DPET tracker will be available as soon as possible.
 
 ## Demo
+![image](https://github.com/Yang428/DPET/blob/master/resultsOnBenchmarks/Skating1.gif)
+![image](https://github.com/Yang428/DPET/blob/master/resultsOnBenchmarks/Skating2_1.gif)
+![image](https://github.com/Yang428/DPET/blob/master/resultsOnBenchmarks/Skating2_2.gif)
 ![image](https://github.com/Yang428/DPET/blob/master/resultsOnBenchmarks/Basketball.gif)
 ![image](https://github.com/Yang428/DPET/blob/master/resultsOnBenchmarks/Football.gif)
 ![image](https://github.com/Yang428/DPET/blob/master/resultsOnBenchmarks/Diving.gif)
@@ -11,9 +14,6 @@ The main codes of the DPET tracker will be available as soon as possible.
 ![image](https://github.com/Yang428/DPET/blob/master/resultsOnBenchmarks/DragonBaby.gif)
 ![image](https://github.com/Yang428/DPET/blob/master/resultsOnBenchmarks/Ironman.gif)
 ![image](https://github.com/Yang428/DPET/blob/master/resultsOnBenchmarks/Matrix.gif)
-![image](https://github.com/Yang428/DPET/blob/master/resultsOnBenchmarks/Skating1.gif)
-![image](https://github.com/Yang428/DPET/blob/master/resultsOnBenchmarks/Skating2_1.gif)
-![image](https://github.com/Yang428/DPET/blob/master/resultsOnBenchmarks/Skating2_2.gif)
 ![image](https://github.com/Yang428/DPET/blob/master/resultsOnBenchmarks/got4.gif)
 ## Running Environments
 * Pytorch 1.1.0, Python 3.6.12, Cuda 9.0, torchvision 0.3.0, cudatoolkit 9.0, Matlab R2016b.
