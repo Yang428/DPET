@@ -5,9 +5,9 @@ The main codes of the DPET tracker will be available as soon as possible.
 ## Demo
 ![image](https://github.com/Yang428/DPET/blob/master/resultsOnBenchmarks/Basketball.gif)
 ![image](https://github.com/Yang428/DPET/blob/master/resultsOnBenchmarks/Football.gif)
+![image](https://github.com/Yang428/DPET/blob/master/resultsOnBenchmarks/Diving.gif)
 ![image](https://github.com/Yang428/DPET/blob/master/resultsOnBenchmarks/CarScale.gif)
 ![image](https://github.com/Yang428/DPET/blob/master/resultsOnBenchmarks/Deer.gif)
-![image](https://github.com/Yang428/DPET/blob/master/resultsOnBenchmarks/Diving.gif)
 ![image](https://github.com/Yang428/DPET/blob/master/resultsOnBenchmarks/DragonBaby.gif)
 ![image](https://github.com/Yang428/DPET/blob/master/resultsOnBenchmarks/Ironman.gif)
 ![image](https://github.com/Yang428/DPET/blob/master/resultsOnBenchmarks/Matrix.gif)
