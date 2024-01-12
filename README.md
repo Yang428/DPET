@@ -64,7 +64,7 @@ You can download the models from the [Baidu cloud link](https://pan.baidu.com/s/
 
 ## Testing the tracker
 There are the [raw resullts](https://github.com/Yang428/DPET/tree/master/resultsOnBenchmarks) on eight datasets. 
-1) Download the testing datasets OTB-100, LaSOT, Got-10k, TrackingNet, VOT2016, VOT2018, VOT2019 and VOT2020 from the following Baidu cloud links.
+1) Download the testing datasets OTB-100, LaSOT, Got-10k, TrackingNet, VOT2016, VOT2018, VOT2019, VOT2020 and VOT2021 from the following Baidu cloud links.
 * [OTB-100](https://pan.baidu.com/s/1TC6BF9erhDCENGYElfS3sw), the extraction code is '9x8q'.
 * [LaSOT](https://pan.baidu.com/s/1KBlrWGOFH9Fe85pCWN5ZkA&shfl=sharepset#list/path=%2F).
 * [Got-10k](https://pan.baidu.com/s/1t_PvpIicHc0U9yR4upf-cA), the extraction code is '78hq'.
@@ -73,6 +73,7 @@ There are the [raw resullts](https://github.com/Yang428/DPET/tree/master/results
 * [VOT2018](https://pan.baidu.com/s/1ztAfNwahpDBDssnEYONDuw), the extraction code is 'jsgt'.
 * [VOT2019](https://pan.baidu.com/s/1vf7l4sQMCxZY_fDsHkuwTA), the extraction code is '61kh'.
 * [VOT2020](https://pan.baidu.com/s/16PFiEdnYQDIGh4ZDxeNB_w), the extraction code is 'kdag'.
+* [VOT2021](https://votchallenge.net/vot2021/dataset.html)
 * Or you can download almost all tracking datasets from this web [link](https://blog.csdn.net/laizi_laizi/article/details/105447947#VisDrone_77).
 
 2) Change the following paths to you own paths.
@@ -92,10 +93,10 @@ python run_experiment.py myexperiments trackingnet
 ## Evaluation on VOT16, VOT18 and VOT19 using Matlab R2016b
 We provide a [VOT Matlab toolkit](https://github.com/votchallenge/toolkit-legacy) integration for the DPET tracker. There is the [tracker_DPET.m](https://github.com/Yang428/DPET/tree/master/pytracking/utils) Matlab file in the 'pytracking/utils', which can be connected with the toolkit. It uses the 'pytracking/vot_wrapper.py' script to integrate the tracker to the toolkit.
 
-## Evaluation on VOT2020 using Python Toolkit
+## Evaluation on VOT2020 and VOT2021 using Python Toolkit
 We provide a [VOT Python toolkit](https://github.com/votchallenge/toolkit) integration for the DPET tracker. There is the [trackers.ini](https://github.com/Yang428/DPET/tree/master/pytracking/utils) setting file in the 'pytracking/utils', which can be connected with the toolkit. It uses the 'pytracking/vot20_wrapper.py' script to integrate the tracker to the toolkit.
 ```
-cd pytracking/workspace_vot2020
+cd pytracking/workspace_vot2020 (or workspace_vot2021)
 pip install git+https://github.com/votchallenge/vot-toolkit-python
 vot initialize <vot2020> --workspace ./workspace_vot2020/
 vot evaluate DPET
