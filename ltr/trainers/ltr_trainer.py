@@ -108,8 +108,8 @@ class LTRTrainer(BaseTrainer):
                     print_str += '%s: %.5f  ,  ' % (name, val.avg)
             print(print_str[:-5])
             ## save loss
-            with open('/home/wcz/Yang/DPET/loginfo.txt','a') as f:  
-                f.write(print_str+'\n')
+            #with open('/home/wcz/Yang/DPET/loginfo.txt','a') as f:  
+            #    f.write(print_str+'\n')
 
     def _stats_new_epoch(self):
         # Record learning rate
