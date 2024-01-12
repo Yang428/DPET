@@ -11,23 +11,20 @@ from ltr import actors
 from ltr.trainers import LTRTrainer
 import ltr.data.transforms as dltransforms
 
-## modify loss function ##
+## modified loss function ##
 class ModifyLoss(torch.nn.Module):
     def __init__(self):
         super().__init__()
 
-    def forward(self, mask_pred, mask_contour, mask):#, scores):
+    def forward(self, mask_pred, mask_contour, mask):
         belta = 1             # emphasize factor of edges 
         mask_pred = 1/(1+torch.exp(-mask_pred/2)) # sigmoid function, /2 enlarge the gap
         if mask_contour is None:
             loss = mask*torch.log(mask_pred+1e-10) + (1-mask)*torch.log(1-mask_pred+1e-10)
             return torch.mean(-loss)
-        #scores = 1/(1+torch.exp(-scores/2))
-        #cmask = nn.functional.interpolate(mask[:,:1,:,:], size=(24, 24))
         # foreground loss and background loss
         loss1 = (mask[:,0,:,:] + belta*mask_contour[:,0,:,:])*torch.log(mask_pred[:,0,:,:]+1e-10) + (1-mask[:,0,:,:])*torch.log(1-mask_pred[:,0,:,:]+1e-10)
         loss2 = mask[:,1,:,:]*torch.log(mask_pred[:,1,:,:]+1e-10) + (1-mask[:,1,:,:])*torch.log(1-mask_pred[:,1,:,:]+1e-10) # 1e-10, avoid zero element in log function
-        #loss3 = cmask*torch.log(scores+1e-10) + (1-cmask)*torch.log(1-scores+1e-10)
         loss = torch.mean(-(loss1+loss2))
         return loss
 
@@ -68,9 +65,7 @@ def run(settings):
 
     lasot_anno_path = os.path.join(settings.env.pregenerated_masks, "lasot_masks")
     lasot_train = LasotVOS(anno_path=lasot_anno_path, split='train')
-
-    #davis_train = Davis(version='2017', multiobj=False, split='train')
-
+    
     vos_train = Vos(split='train')
 
     # Validation datasets
