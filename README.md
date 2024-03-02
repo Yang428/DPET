@@ -104,11 +104,11 @@ vot analysis --workspace ./workspace_vot2020/DPET
 ```
 
 ## Training the networks
-The DPET network is trained on the YouTube VOS, GOT-10K and TrackingNet datasets. Download the VOS training dataset (2018 version) and copy the files vos-list-train.txt and vos-list-val.txt from ltr/data_specs to the training directory of the VOS dataset. Download the bounding boxes from [this link](http://data.vicos.si/alanl/d3s/rectangles.zip) and copy them to the corresponding training sequence directories.
+The DPET network is trained on the YouTube VOS, GOT-10K and LaSOT datasets. Download the VOS training dataset (2018 version) and copy the files vos-list-train.txt and vos-list-val.txt from ltr/data_specs to the training directory of the VOS dataset. Download the bounding boxes from [this link](http://data.vicos.si/alanl/d3s/rectangles.zip) and copy them to the corresponding training sequence directories.
 1) Download the YouTube VOS dataset from [this link](https://youtube-vos.org/challenge/2018/).
 2) Download the GOT-10K dataset from [this link](https://blog.csdn.net/laizi_laizi/article/details/105447947#VisDrone_77).
-3) Download the TrackingNet dataset from [this link](https://blog.csdn.net/laizi_laizi/article/details/105447947#VisDrone_77).
-4) Download the pre-generated masks of GOT-10K and TrackingNet from [this link](https://drive.google.com/file/d/17YcdQOoA4DubK-krClJfxNtw9ooCyWHv/view). We refer to [this link](https://github.com/visionml/pytracking/blob/master/ltr/README.md#RTS) for more instructions.
+3) Download the LaSOT dataset from [this link](https://blog.csdn.net/laizi_laizi/article/details/105447947#VisDrone_77).
+4) Download the pre-generated masks of GOT-10K and LaSOT from [this link](https://drive.google.com/file/d/17YcdQOoA4DubK-krClJfxNtw9ooCyWHv/view). We refer to [this link](https://github.com/visionml/pytracking/blob/master/ltr/README.md#RTS) for more instructions.
 
 5) Change the following paths to you own paths.
 ```
