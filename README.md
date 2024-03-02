@@ -114,6 +114,7 @@ The DPET network is trained on the YouTube VOS, GOT-10K and LaSOT datasets. Down
 ```
 Workspace: ltr/admin/local.py  workspace_dir.
 Dataset: ltr/admin/local.py  vos_dir.
+Pre_masks: ltr/admin/local.py  pregenerated_masks
 ```
 3) Taining the DPET network
 ```
